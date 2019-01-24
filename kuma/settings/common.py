@@ -937,6 +937,12 @@ PIPELINE_JS = {
             'async': True,
         },
     },
+    'edit-profile-page': {
+        'source_filenames': (
+            'js/components/edit-profile-page/edit-profile-page.js',
+        ),
+        'output_filename': 'build/js/edit-profile-page.js',
+    },
     'codepen-iex': {
         'source_filenames': (
             'js/components/codepen-iex/codepen-iex.js',

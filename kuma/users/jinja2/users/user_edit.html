@@ -21,29 +21,24 @@
 {% block site_js %}
 {{ super() }}
 {% javascript 'jquery-ui' %}
-{% javascript 'users' %}
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+{% javascript 'edit-profile-page' %}
 {% endblock %}
 
 {% block content %}
+<div id="react"
+     data-username={{edit_user.username}}
+     data-avatar={{ gravatar_url(edit_user.email, size=200) }}
+     data-profile={{ edit_user.get_absolute_url() }}
+     data-caution={{ not is_me }}
+></div>
 <div class="column-container">
-
-  <div class="column-2 smaller">
-    <figure class="acc-avatar">
-      <img src="{{ gravatar_url(edit_user.email, size=200) }}" alt="{{ edit_user.username }}" width="200" height="200" class="user-photo avatar" />
-      <figcaption>
-        {{ _('Change your avatar at') }} <a href="http://gravatar.com" rel="external">gravatar.com</a>
-      </figcaption>
-    </figure>
-  </div>
-
   <div id="user-edit" class="column-half">
-    <h1>{{ edit_user.username }} <a class="user-title-profile" href="{{ edit_user.get_absolute_url() }}">{{ _('View profile') }}</a></h1>
-
-    {% if not is_me %}
-    <div class="notification warning">
-      {% trans %}You're editing a different profile than your own. Please take care!{% endtrans %}
+    <div class="column-2 smaller">
     </div>
-    {% endif %}
+    <div id="user-edit" class="column-half"></div>
+
 
     <form class="submission" method="post" action="">
       {% csrf_token %}
