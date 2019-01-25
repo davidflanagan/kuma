@@ -28,10 +28,12 @@
 
 {% block content %}
 <div id="react"
-     data-username={{edit_user.username}}
+     data-username={{ edit_user.username }}
+     data-email={{ edit_user.email }}
      data-avatar={{ gravatar_url(edit_user.email, size=200) }}
      data-profile={{ edit_user.get_absolute_url() }}
      data-caution={{ not is_me }}
+     data-edit-email-url={{ url('account_email') }}
 ></div>
 <div class="column-container">
   <div id="user-edit" class="column-half">

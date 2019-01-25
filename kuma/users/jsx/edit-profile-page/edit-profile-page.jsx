@@ -48,7 +48,28 @@ export default class EditProfilePage extends React.Component<Props> {
                     </div>
                 )}
 
-{this.props.csrftoken}
+                <form className="submission" method="post" action="">
+                    <input type='hidden' name='csrfmiddlewaretoken' 
+                           value={this.props.csrftoken}/>
+
+      <fieldset className="section notitle" id="personal">
+        <ul>
+          <li id="field-beta" class="field">
+            <h2>{gettext('User Information')}</h2>
+                <label for="id_user-beta">
+                <input type="checkbox" name="user-beta" id="id_user-beta">
+                Beta tester</input>
+            </label>
+
+            <p className="field-note">{ gettext("We'd love to have your feedback on site changes! Beta testers get access to new features first and we send the occasional email asking for help testing specific things.") }</p>
+          </li>
+          <li id="field_email" className="field type_email required">
+            <label>{gettext('Primary Email')} <a className="field-management" href={this.props.editEmailUrl}>{ gettext('Edit email') }</a></label>
+            { this.props.email }
+          </li>
+                </ul>
+                </fieldset>
+</form>
 
             </div>
         );

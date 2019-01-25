@@ -12,9 +12,11 @@ let csrftoken = document.cookie
 ReactDOM.render(
     <EditProfilePage
         avatar={props.avatar}
-        username={props.username}
+      username={props.username}
+      email={props.email}
         profile={props.profile}
-        csrftoken={csrftoken}
+      csrftoken={csrftoken}
+      editEmailUrl={"props.editEmailUrl"}
     />,
     container
 );
