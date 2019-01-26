@@ -1,5 +1,5 @@
 //@flow
-//import React from "react";
+import React from "react";
 
 type Props = {
     avatar: string,
@@ -9,6 +9,7 @@ type Props = {
 
 export default class EditProfilePage extends React.Component<Props> {
     render() {
+        console.log("Rendering!");
         return (
             <div className="column-container">
                 <div className="column-2 smaller">
@@ -54,11 +55,11 @@ export default class EditProfilePage extends React.Component<Props> {
 
       <fieldset className="section notitle" id="personal">
         <ul>
-          <li id="field-beta" class="field">
+          <li id="field-beta" className="field">
             <h2>{gettext('User Information')}</h2>
-                <label for="id_user-beta">
-                <input type="checkbox" name="user-beta" id="id_user-beta">
-                Beta tester</input>
+                <label htmlFor="id_user-beta">
+                <input type="checkbox" name="user-beta" id="id_user-beta"/>
+                Beta tester
             </label>
 
             <p className="field-note">{ gettext("We'd love to have your feedback on site changes! Beta testers get access to new features first and we send the occasional email asking for help testing specific things.") }</p>

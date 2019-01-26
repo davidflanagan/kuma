@@ -939,7 +939,9 @@ PIPELINE_JS = {
     },
     'edit-profile-page': {
         'source_filenames': (
-            'js/components/edit-profile-page/edit-profile-page.js',
+            'js/webpacks/react.js',
+            'js/webpacks/react-dom.js',
+            'js/webpacks/edit-profile-page.js',
         ),
         'output_filename': 'build/js/edit-profile-page.js',
     },

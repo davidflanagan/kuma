@@ -21,8 +21,8 @@
 {% block site_js %}
 {{ super() }}
 {% javascript 'jquery-ui' %}
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 {% javascript 'edit-profile-page' %}
 {% endblock %}
 
