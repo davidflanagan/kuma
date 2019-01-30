@@ -89,3 +89,6 @@ geckodriver.log
 wheelhouse
 /uploads/
 kumascript.log
+
+# Emacs
+*~

@@ -926,6 +926,12 @@ PIPELINE_JS = {
         ),
         'output_filename': 'build/js/main.js',
     },
+    'header': {
+        'source_filenames': (
+            'parcels/header.js',
+        ),
+        'output_filename': 'build/js/header.js',
+    },
     'users': {
         'source_filenames': (
             'js/libs/tag-it.js',

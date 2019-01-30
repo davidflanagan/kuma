@@ -14,27 +14,64 @@
     },
     "scripts": {
         "build-watch": "gulp",
+        "parcel-watch": "parcel watch javascript/header/index.jsx --out-dir static/parcels --out-file header.js",
         "stylelint": "./node_modules/.bin/stylelint \"kuma/static/styles/**/*.scss\"",
         "eslint": "./node_modules/.bin/eslint kuma/",
         "optim:svg": "svgo jinja2/includes/icons/* --disable={removeViewBox,removeTitle} --multipass --pretty",
         "precommit": "npm run eslint && npm run stylelint",
         "test": "jest"
     },
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react",
+            "@babel/preset-flow",
+            [
+                "@emotion/babel-preset-css-prop",
+                {
+                    "sourceMap": false
+                }
+            ]
+        ],
+        "plugins": [
+            [
+                "@babel/plugin-proposal-class-properties",
+                {
+                    "loose": true
+                }
+            ]
+        ]
+    },
     "dependencies": {
+        "@emotion/core": "^10.0.6",
+        "@emotion/styled": "^10.0.6",
         "clean-css-cli": "4.2.1",
         "eslint": "5.1.0",
         "eslint-plugin-jest": "22.1.2",
         "node-sass": "4.9.4",
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0",
+        "react-select": "^2.3.0",
         "stylelint": "9.3.0",
         "uglify-js": "2.8.29"
     },
     "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/plugin-proposal-class-properties": "^7.3.0",
+        "@babel/preset-env": "^7.3.1",
+        "@babel/preset-flow": "^7.0.0",
+        "@babel/preset-react": "^7.0.0",
+        "@emotion/babel-preset-css-prop": "^10.0.6",
+        "babel-plugin-emotion": "^10.0.6",
         "gulp": "3.9.1",
         "gulp-sass": "4.0.1",
         "gulp-stylelint": "7.0.0",
         "gulp-watch": "5.0.0",
         "husky": "0.14.3",
         "jest": "23.6.0",
+        "mdn-browser-compat-data": "0.0.64",
+        "parcel-bundler": "^1.11.0",
+        "prettier": "^1.16.1",
         "sass-true": "4.0.0",
         "svgo": "1.0.5"
     }
