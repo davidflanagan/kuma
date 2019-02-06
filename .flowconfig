@@ -1,0 +1,18 @@
+[ignore]
+<PROJECT_ROOT>/kuma/.*
+<PROJECT_ROOT>/kumascript/.*
+
+[untyped]
+# this is temporary until the next release of react select
+# which will bump the version of flow
+<PROJECT_ROOT>/node_modules/react-select
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
