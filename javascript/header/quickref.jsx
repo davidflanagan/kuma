@@ -56,7 +56,7 @@ function handleChange(option, change) {
     }
 }
 
-export default class QuickRef extends React.Component {
+export default class QuickRef extends React.Component<{}> {
     render() {
         return (
             <div css={{flexBasis:400, zIndex:100}}>

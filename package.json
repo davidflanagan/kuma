@@ -19,7 +19,8 @@
         "eslint": "./node_modules/.bin/eslint kuma/",
         "optim:svg": "svgo jinja2/includes/icons/* --disable={removeViewBox,removeTitle} --multipass --pretty",
         "precommit": "npm run eslint && npm run stylelint",
-        "test": "jest"
+        "test": "jest",
+        "flow": "flow"
     },
     "babel": {
         "presets": [
@@ -63,6 +64,7 @@
         "@babel/preset-react": "^7.0.0",
         "@emotion/babel-preset-css-prop": "^10.0.6",
         "babel-plugin-emotion": "^10.0.6",
+        "flow-bin": "^0.92.1",
         "gulp": "3.9.1",
         "gulp-sass": "4.0.1",
         "gulp-stylelint": "7.0.0",

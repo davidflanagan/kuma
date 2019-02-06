@@ -1,9 +1,10 @@
 //@flow
-import React from 'react';
+import * as React from 'react';
 import styled from '@emotion/styled';
 
 type Props = {
-    label: string
+    label: string,
+    children: Array<React.Node>
 };
 
 type State = {

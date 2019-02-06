@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import Logo from './logo.jsx';
 import Dropdown from './dropdown.jsx';
 import QuickRef from './quickref.jsx';
+import gettext from '../gettext.js';
 
 const Row = styled.div`
     display: flex;
