@@ -921,6 +921,13 @@ def react_document(request, document_slug, document_locale):
             fields=['title', 'locale', 'slug', 'parent']
         )
 
+        # the parent field is not JSON serializable
+        languages = [{
+            'title': l.title,
+            'locale': l.locale,
+            'slug': l.slug,
+        } for l in other_translations]
+
         # Bundle it all up and, finally, return.
         context = {
             'document': original_doc,
@@ -948,6 +955,7 @@ def react_document(request, document_slug, document_locale):
             'analytics_en_slug': en_slug,
             'content_experiment': rendering_params['experiment'],
             'other_translations': other_translations,
+            'languages': json.dumps(languages),
         }
         response = render(request, 'wiki/react_document.html', context)
 
