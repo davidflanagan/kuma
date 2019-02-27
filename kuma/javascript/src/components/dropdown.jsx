@@ -1,6 +1,7 @@
 //@flow
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 const MenuContainer = styled.div`
@@ -40,15 +41,22 @@ const Menu = styled.ul`
     box-shadow: 3px 3px 5px black;
     padding: 10px;
     min-width: 100%;
+    max-height: 400px;
+    overflow-y: scroll;
     li {
         padding: 5px;
         white-space: nowrap;
     }
 `;
 
+const styles = {
+    attachRight: css({ right: 0 })
+};
+
 type DropdownProps = {
     label: string,
-    children: Array<React.Node>
+    children: Array<React.Node>,
+    attachRight?: boolean
 };
 
 export default function Dropdown(props: DropdownProps) {
@@ -85,9 +93,15 @@ export default function Dropdown(props: DropdownProps) {
         <MenuContainer>
             <MenuLabel onClick={!shown ? () => setShown(true) : null}>
                 {props.label}
-                <Arrow>{shown ? '▲' : '▼'}</Arrow>
+                {typeof props.label === 'string' && (
+                    <Arrow>{shown ? '▲' : '▼'}</Arrow>
+                )}
             </MenuLabel>
-            {shown && <Menu>{props.children}</Menu>}
+            {shown && (
+                <Menu css={props.attachRight ? styles.attachRight : null}>
+                    {props.children}
+                </Menu>
+            )}
         </MenuContainer>
     );
 }

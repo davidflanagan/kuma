@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 
 import Login from './login.jsx';
 import Logo from './logo.jsx';
-import Dropdown from './dropdown.jsx';
+import Dropdown from '../components/dropdown.jsx';
 import Search from './search.jsx';
 import gettext from '../gettext.js';
 

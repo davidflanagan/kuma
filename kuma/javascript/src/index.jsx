@@ -11,5 +11,6 @@ if (container) {
 
 let titleMenusContainer = document.getElementById('react-document-actions');
 if (titleMenusContainer) {
-    ReactDOM.render(<TitleMenus />, titleMenusContainer);
+    let languages = JSON.parse(titleMenusContainer.dataset.languages);
+    ReactDOM.render(<TitleMenus languages={languages} />, titleMenusContainer);
 }

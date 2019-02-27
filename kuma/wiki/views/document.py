@@ -924,8 +924,9 @@ def react_document(request, document_slug, document_locale):
         # the parent field is not JSON serializable
         languages = [{
             'title': l.title,
-            'locale': l.locale,
             'slug': l.slug,
+            'locale': l.locale,
+            'language': l.language
         } for l in other_translations]
 
         # Bundle it all up and, finally, return.
